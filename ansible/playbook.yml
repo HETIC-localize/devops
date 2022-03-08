@@ -1,0 +1,11 @@
+---
+
+- name: Install Docker
+  hosts: localhost
+  roles:
+    - { role: geerlingguy.docker, tags: ["docker"] }
+
+- name: Template docker
+  hosts: localhost
+  roles:
+    - { role: back_end, tags: ["back_end"] }
