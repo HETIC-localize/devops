@@ -7,9 +7,9 @@
 
 - name: Upload docker-compose file
   template:
-    src: "{{ back_end_template }}"
+    src: templates/docker-compose.yml
     dest: "{{ back_end_workdir }}docker-compose.yml"
 
 - name: Start docker-composer
-  docker_compose:
+  docker_service:
     project_src: "{{ back_end_workdir }}"
