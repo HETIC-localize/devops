@@ -164,5 +164,5 @@ resource "google_compute_firewall" "default" {
 }
 
 module "storage" {
-  source = "storage"
+  source = "./storage"
 }
