@@ -1,0 +1,15 @@
+---
+
+- name: Check and create structure
+  file:
+    path: "{{ back_end_workdir }}"
+    state: directory
+
+- name: Upload docker-compose file
+  template:
+    src: "{{ back_end_template }}"
+    dest: "{{ back_end_workdir }}docker-compose.yml"
+
+- name: Start docker-composer
+  docker_compose:
+    project_src: "{{ back_end_workdir }}"
