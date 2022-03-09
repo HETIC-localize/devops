@@ -108,7 +108,9 @@ resource "google_compute_instance_template" "default" {
       apt-get install -y git
       apt-get install -y ansible
       git clone https://github.com/HETIC-localize/devops.git
-      cd /devops/ansible/
+      cd /devops/
+      git checkout feature/ansible
+      cd ansible/
       ansible-playbook -i env/prod/hosts playbook.yml
 
     EOF1
@@ -162,5 +164,5 @@ resource "google_compute_firewall" "default" {
 }
 
 module "storage" {
-  source = "./storage"
+  source = "storage"
 }
