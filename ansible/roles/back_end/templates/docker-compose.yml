@@ -13,7 +13,7 @@ services:
       - api
 
   app:
-    image: guillaudev/madu_back:latest
+    image: guillaudev/localize_api:latest
     container_name: localize-app
     restart: unless-stopped
     working_dir: "{{ back_end_workdir }}"
@@ -26,7 +26,3 @@ services:
 networks:
   api:
     driver: bridge
-#volumes:
-####> doctrine/doctrine-bundle ###
-#  db-data:
-####< doctrine/doctrine-bundle ###
