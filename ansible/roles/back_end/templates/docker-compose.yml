@@ -13,12 +13,11 @@ services:
       - api
 
   app:
-    image: guillaudev/localize_api:latest
+    image: guillaudev/localize-api:latest
     container_name: localize-app
     restart: unless-stopped
-    working_dir: "{{ back_end_workdir }}"
+    working_dir: /var/www/
     volumes:
-      - ./:/var/www/
       - ./upload/:/var/www/public/upload/
     networks:
       - api
