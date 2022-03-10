@@ -1,0 +1,11 @@
+---
+
+- name: Install Docker
+  hosts: localhost
+  roles:
+    - { role: geerlingguy.docker, tags: ["docker"] }
+    - { role: geerlingguy.pip, tags: ["pip"] }
+
+- name: Deploy inside code
+  import_playbook: back_end.yml
+  tags: ['back_end']
