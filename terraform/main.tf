@@ -164,5 +164,9 @@ resource "google_compute_firewall" "default" {
 }
 
 module "storage" {
-  source = "./storage"
+  source = "modules/storage"
+}
+
+module "pub_sub" {
+  source = "modules/pub_sub"
 }
