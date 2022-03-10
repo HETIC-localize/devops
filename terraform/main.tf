@@ -107,6 +107,7 @@ resource "google_compute_instance_template" "default" {
 
       apt-get install -y git
       apt-get install -y ansible
+      apt-get install -y -f
       git clone https://github.com/HETIC-localize/devops.git
       cd /devops/ansible/
       sudo ansible-playbook -i env/prod/hosts playbook.yml
