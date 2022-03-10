@@ -2,6 +2,7 @@
 
 - name: BACK_END - Install back end docker
   hosts: localhost
+  become: yes
   roles:
     - role: back_end
       tags: 'back_end'
