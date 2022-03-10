@@ -162,9 +162,9 @@ resource "google_compute_firewall" "default" {
 }
 
 module "storage" {
-  source = "modules/storage"
+  source = "./modules/storage"
 }
 
 module "pub_sub" {
-  source = "modules/pub_sub"
+  source = "./modules/pub_sub"
 }
