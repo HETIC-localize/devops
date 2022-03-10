@@ -5,6 +5,3 @@
     url: "{{ docker_compose_url }}"
     dest: "{{ docker_compose_path }}"
     mode: 0755
-  when: >
-    docker_compose_current_version.stdout is not defined
-    or docker_compose_version not in docker_compose_current_version.stdout
