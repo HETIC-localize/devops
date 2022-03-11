@@ -108,7 +108,9 @@ resource "google_compute_instance_template" "default" {
       apt-get install -y git
       apt-get install -y ansible
       apt-get install -y -f
+      apt-get -y install python3-pip
       git clone https://github.com/HETIC-localize/devops.git
+      ansible-playbook -i env/prod/hosts playbook.yml
 
     EOF1
   }
